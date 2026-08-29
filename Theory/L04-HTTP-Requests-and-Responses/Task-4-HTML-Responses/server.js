@@ -44,7 +44,7 @@ const server = http.createServer((req, res) => {
             ${tasks.length === 0 ? '<p>No tasks</p>' : tasks.map(t => `
                 <div class="task">
                     <span class="${t.done ? 'done' : ''}">${escapeHtml(t.title)}</span>
-                    <a href="/toggle?id=${t.id}">[${t.done ? '↩' : '✓'}]</a>
+                    <a href="/toggle?id=${t.id}">[${t.done ? 'DONE' : 'TODO'}]</a>
                     <a href="/delete?id=${t.id}" onclick="return confirm('Delete?')">[✕]</a>
                 </div>
             `).join('')}
