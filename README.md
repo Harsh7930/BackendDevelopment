@@ -13,6 +13,7 @@ This repository contains my Backend Development class theory work and laboratory
   - [Lecture 5: RESTful APIs and FastAPI](Theory/L05-RESTful-APIs-FastAPI/)
   - [Lecture 6: Session Control](Theory/L06-Session-Control/)
   - [Lecture 7: Web Storage](Theory/L07-Web-Storage/)
+  - [Assignment 01: Notes App](Theory/Assignment-1-Notes-App/)
 - [Lab](Lab/) — laboratory experiments and backend projects.
 - [Node.js Express Lab](nodejs-express-lab/) — Express practice project.
 - [Session Control](Session-Control/) — session-management project files.

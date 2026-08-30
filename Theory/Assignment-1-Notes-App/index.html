@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes App | Assignment 01</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f6f3;
+      color: #17211c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body { margin: 0; min-width: 320px; }
+
+    .app { width: min(760px, calc(100% - 32px)); margin: 48px auto; }
+
+    header { border-bottom: 3px solid #24744b; padding-bottom: 20px; }
+
+    h1 { margin: 0; font-size: 2rem; }
+
+    .subtitle { color: #526259; margin: 8px 0 0; }
+
+    .composer, .toolbar, .note { background: #ffffff; border: 1px solid #d8e1db; }
+
+    .composer { display: grid; gap: 12px; padding: 16px; margin-top: 24px; border-radius: 8px; }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+      padding: 12px;
+      border: 1px solid #aebcb3;
+      border-radius: 5px;
+      font: inherit;
+      color: inherit;
+    }
+
+    textarea:focus, button:focus-visible { outline: 3px solid #9fcdb4; outline-offset: 2px; }
+
+    .composer-footer, .toolbar, .note-footer, .actions { display: flex; align-items: center; gap: 10px; }
+
+    .composer-footer { justify-content: space-between; color: #526259; font-size: .9rem; }
+
+    button { border: 1px solid transparent; border-radius: 5px; padding: 9px 13px; cursor: pointer; font: inherit; }
+    button:hover { filter: brightness(.95); }
+    .primary { background: #24744b; color: #fff; }
+    .neutral { background: #e8efea; color: #17211c; border-color: #cbd8ce; }
+    .danger { background: #fff0f0; color: #a12424; border-color: #efc6c6; }
+    .filter.active { background: #17211c; color: #fff; }
+
+    .toolbar { justify-content: space-between; padding: 12px; margin: 20px 0; border-radius: 8px; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .stats { color: #526259; font-size: .9rem; }
+    .notes { display: grid; gap: 12px; }
+
+    .note { padding: 16px; border-radius: 8px; border-left: 5px solid #24744b; }
+    .note.completed { border-left-color: #82918a; background: #fafcfb; }
+    .note.completed .note-text { color: #66756c; text-decoration: line-through; }
+    .note-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
+    .note-footer { justify-content: space-between; margin-top: 14px; color: #68786e; font-size: .85rem; }
+    .actions { flex-wrap: wrap; }
+    .empty { padding: 40px 18px; text-align: center; color: #526259; background: #fff; border: 1px dashed #aebcb3; border-radius: 8px; }
+
+    @media (max-width: 560px) {
+      .app { width: min(100% - 24px, 760px); margin: 24px auto; }
+      .toolbar, .note-footer { align-items: flex-start; flex-direction: column; }
+      .actions { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Notes</h1>
+      <p class="subtitle">Assignment 01</p>
+    </header>
+
+    <section class="composer" aria-label="Create a note">
+      <label for="note-input">New note</label>
+      <textarea id="note-input" maxlength="200" placeholder="Write a note..." autofocus></textarea>
+      <div class="composer-footer">
+        <span id="character-count">0 / 200</span>
+        <button class="primary" id="add-note" type="button">Add note</button>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Note controls">
+      <div class="filters" role="group" aria-label="Filter notes">
+        <button class="neutral filter active" data-filter="all" type="button">All</button>
+        <button class="neutral filter" data-filter="active" type="button">Active</button>
+        <button class="neutral filter" data-filter="completed" type="button">Completed</button>
+      </div>
+      <span class="stats" id="stats">0 notes</span>
+      <button class="danger" id="clear-notes" type="button">Clear all</button>
+    </section>
+
+    <section class="notes" id="notes" aria-live="polite"></section>
+  </main>
+
+  <script>
+    const storageKey = 'assignmentOneNotes';
+    const input = document.querySelector('#note-input');
+    const notesElement = document.querySelector('#notes');
+    const statsElement = document.querySelector('#stats');
+    const countElement = document.querySelector('#character-count');
+    let filter = 'all';
+
+    function loadNotes() {
+      try {
+        const savedNotes = JSON.parse(localStorage.getItem(storageKey) || '[]');
+        return Array.isArray(savedNotes) ? savedNotes : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveNotes(notes) {
+      localStorage.setItem(storageKey, JSON.stringify(notes));
+    }
+
+    function formatDate(date) {
+      return new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(date);
+    }
+
+    function makeButton(label, className, action, id) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = className;
+      button.textContent = label;
+      button.dataset.action = action;
+      button.dataset.id = id;
+      return button;
+    }
+
+    function render() {
+      const notes = loadNotes();
+      const visibleNotes = notes.filter((note) => filter === 'all' || (filter === 'completed' ? note.completed : !note.completed));
+      const completed = notes.filter((note) => note.completed).length;
+      statsElement.textContent = `${notes.length} note${notes.length === 1 ? '' : 's'} | ${completed} completed`;
+      notesElement.replaceChildren();
+
+      if (visibleNotes.length === 0) {
+        const empty = document.createElement('p');
+        empty.className = 'empty';
+        empty.textContent = notes.length === 0 ? 'No notes yet.' : 'No notes match this filter.';
+        notesElement.append(empty);
+        return;
+      }
+
+      visibleNotes.forEach((note) => {
+        const article = document.createElement('article');
+        article.className = `note${note.completed ? ' completed' : ''}`;
+        const text = document.createElement('div');
+        text.className = 'note-text';
+        text.textContent = note.text;
+
+        const footer = document.createElement('div');
+        footer.className = 'note-footer';
+        const date = document.createElement('span');
+        date.textContent = `Created ${formatDate(new Date(note.createdAt))}`;
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+        actions.append(
+          makeButton(note.completed ? 'Mark active' : 'Complete', 'neutral', 'toggle', note.id),
+          makeButton('Edit', 'neutral', 'edit', note.id),
+          makeButton('Delete', 'danger', 'delete', note.id)
+        );
+        footer.append(date, actions);
+        article.append(text, footer);
+        notesElement.append(article);
+      });
+    }
+
+    function addNote() {
+      const text = input.value.trim();
+      if (!text) {
+        input.focus();
+        return;
+      }
+      const notes = loadNotes();
+      notes.unshift({ id: crypto.randomUUID(), text, completed: false, createdAt: new Date().toISOString() });
+      saveNotes(notes);
+      input.value = '';
+      countElement.textContent = '0 / 200';
+      render();
+      input.focus();
+    }
+
+    document.querySelector('#add-note').addEventListener('click', addNote);
+    input.addEventListener('input', () => { countElement.textContent = `${input.value.length} / 200`; });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) addNote();
+    });
+
+    document.querySelectorAll('.filter').forEach((button) => {
+      button.addEventListener('click', () => {
+        filter = button.dataset.filter;
+        document.querySelectorAll('.filter').forEach((item) => item.classList.toggle('active', item === button));
+        render();
+      });
+    });
+
+    notesElement.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-action]');
+      if (!button) return;
+      const notes = loadNotes();
+      const note = notes.find((item) => item.id === button.dataset.id);
+      if (!note) return;
+
+      if (button.dataset.action === 'toggle') note.completed = !note.completed;
+      if (button.dataset.action === 'edit') {
+        const nextText = prompt('Edit note:', note.text);
+        if (nextText === null) return;
+        if (!nextText.trim()) return;
+        note.text = nextText.trim().slice(0, 200);
+      }
+      if (button.dataset.action === 'delete') {
+        if (!confirm('Delete this note?')) return;
+        saveNotes(notes.filter((item) => item.id !== note.id));
+        render();
+        return;
+      }
+      saveNotes(notes);
+      render();
+    });
+
+    document.querySelector('#clear-notes').addEventListener('click', () => {
+      if (loadNotes().length && confirm('Delete all notes?')) {
+        localStorage.removeItem(storageKey);
+        render();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>
