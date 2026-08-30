@@ -15,9 +15,9 @@ This repository contains my Backend Development class theory work and laboratory
   - [Lecture 7: Web Storage](Theory/L07-Web-Storage/)
   - [Assignment 01: Notes App](Theory/Assignment-1-Notes-App/)
 - [Lab](Lab/) — laboratory experiments and backend projects.
-- [Node.js Express Lab](nodejs-express-lab/) — Express practice project.
-- [Session Control](Session-Control/) — session-management project files.
+- [Experiment 12, Part A: Node.js, Express, and EJS](Lab/Exp%2012/Exp%2012/parta/) — Express practice project.
+- [Experiment 12, Part B: Sessions and Cookies](Lab/Exp%2012/Exp%2012/partb/) — session-management project files.
 
 ## Published site
 
-The GitHub Pages site is available at [https://harsh7930.github.io/](https://harsh7930.github.io/).
+The coursework GitHub Pages site is available at [https://harsh7930.github.io/BackendDevelopment/](https://harsh7930.github.io/BackendDevelopment/).
