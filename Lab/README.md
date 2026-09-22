@@ -10,5 +10,6 @@ This directory contains Backend Development laboratory experiments and projects.
 - [Experiment 12](Exp%2012/Exp%2012/)
   - [Part A: Node.js, Express, and EJS](Exp%2012/Exp%2012/parta/)
   - [Part B: Sessions and Cookies](Exp%2012/Exp%2012/partb/)
+- [Experiment 13: Mongoose User Management](EXP%2013/mongoose-demo/)
 
 [Back to the Backend Development homepage](../)
