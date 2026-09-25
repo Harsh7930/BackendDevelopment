@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Notes</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <h1>My Notes</h1>
+        <a class="btn primary" href="/notes/new">Add Note</a>
+      </header>
+
+      <form class="search-box" method="GET" action="/">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search by title"
+          value="<%= search %>"
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <% if (search) { %>
+        <p class="info">Showing results for: <strong><%= search %></strong></p>
+      <% } %>
+
+      <% if (notes.length === 0) { %>
+        <div class="empty-state">
+          <p>No notes available yet.</p>
+        </div>
+      <% } else { %>
+        <div class="notes-grid">
+          <% notes.forEach(note => { %>
+            <article class="note-card">
+              <div class="note-header">
+                <h2><%= note.title %></h2>
+                <span class="badge"><%= note.category || 'General' %></span>
+              </div>
+
+              <p class="content"><%= note.content %></p>
+
+              <div class="meta">
+                <small><%= new Date(note.createdAt).toLocaleDateString() %></small>
+              </div>
+
+              <form method="POST" action="/notes/<%= note._id %>/delete" onsubmit="return confirm('Delete this note?');">
+                <button type="submit" class="btn danger">Delete</button>
+              </form>
+            </article>
+          <% }) %>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
