@@ -1,19 +1,4 @@
-// ========================================
-// LECTURE 7: sessionStorage BASICS
-// ========================================
-// sessionStorage is like a TEMPORARY NOTE on your browser
-// It saves data ONLY while the tab is open
-// When you close the tab, all data is deleted!
-// Perfect for: temporary form data, session tokens, single-session info
-//
-// API is IDENTICAL to localStorage
-// Only difference: data expires when tab closes
 
-console.log('\n========== sessionStorage DEMO ==========\n');
-
-// ========================================
-// PART 1: IDENTICAL METHODS
-// ========================================
 console.log('[1] BASIC METHODS (Same as localStorage)');
 console.log('-----------------------------------');
 
