@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 720px;
+    margin: 35px auto;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+section {
+    border: 1px solid #d7d7d7;
+    border-radius: 6px;
+    margin: 20px 0;
+    padding: 16px;
+}
+
+button,
+input {
+    font: inherit;
+    padding: 7px 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#hoverBox {
+    background: #e8f2ff;
+    border: 1px solid #6d9fe8;
+    margin-top: 12px;
+    padding: 22px;
+    text-align: center;
+}
+
+.message {
+    color: #333;
+    min-height: 24px;
+}
+
+.check-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.outer-box {
+    background: #fff3cd;
+    border: 2px solid #d39e00;
+    padding: 28px;
+    text-align: center;
+}
+
+.outer-box button {
+    display: block;
+    margin: 15px auto 0;
+}
+
+#fruitList {
+    padding-left: 24px;
+}
+
+#fruitList li {
+    cursor: pointer;
+    margin: 6px 0;
+    padding: 5px;
+}
+
+#fruitList li.selected {
+    background: #d1e7dd;
+    text-decoration: line-through;
+}

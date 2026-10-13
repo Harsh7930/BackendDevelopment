@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 07 &amp; 08 - DOM Manipulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page">
+        <header>
+            <p class="experiment"><a href="../index.html">&larr; Back to Experiment 07 &amp; 08</a></p>
+            <h1 id="pageHeading">DOM Manipulation Demo</h1>
+            <p class="intro">This page shows simple ways JavaScript can select and change HTML elements.</p>
+        </header>
+
+        <section class="card">
+            <h2>1. Selecting elements and changing text</h2>
+            <p class="demo-text">This is the first paragraph with the class <code>demo-text</code>.</p>
+            <p class="demo-text">This is the second paragraph with the same class.</p>
+            <button id="changeTextBtn" type="button">Change heading text</button>
+            <p id="selectionResult" class="result" aria-live="polite"></p>
+        </section>
+
+        <section class="card">
+            <h2>2. Changing attributes</h2>
+            <p>
+                <a id="websiteLink" href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Open MDN Web Docs</a>
+            </p>
+            <button id="changeLinkBtn" type="button">Change link to Example.com</button>
+            <button id="removeTargetBtn" class="secondary" type="button">Remove target attribute</button>
+            <p id="attributeResult" class="result" aria-live="polite"></p>
+        </section>
+
+        <section class="card">
+            <h2>3. Changing text and HTML</h2>
+            <p id="contentExample">This text will be changed with <code>textContent</code>.</p>
+            <button id="changePlainTextBtn" type="button">Use textContent</button>
+            <button id="changeHtmlBtn" type="button">Use innerHTML</button>
+            <button id="changeInnerTextBtn" type="button">Use innerText</button>
+            <p class="hint">Use <code>textContent</code> for plain text. Only use <code>innerHTML</code> with trusted HTML, never with text typed by a user.</p>
+        </section>
+
+        <section class="card">
+            <h2>4. Changing styles and classes</h2>
+            <div id="colorBox" class="color-box">Click the button to highlight this box.</div>
+            <button id="styleBtn" type="button">Toggle highlight class</button>
+            <p id="styleResult" class="result" aria-live="polite"></p>
+        </section>
+
+        <section class="card">
+            <h2>5. Creating, adding, and removing elements</h2>
+            <label for="itemInput">New item</label>
+            <div class="input-row">
+                <input id="itemInput" type="text" placeholder="For example: Learn appendChild">
+                <button id="addItemBtn" type="button">Add item</button>
+            </div>
+
+            <ul id="itemList" class="item-list">
+                <li><span>First item already in HTML</span></li>
+                <li><span>Second item already in HTML</span></li>
+            </ul>
+
+            <button id="removeLastBtn" class="secondary" type="button">Remove last item</button>
+            <p id="listResult" class="result" aria-live="polite"></p>
+        </section>
+
+        <section class="card">
+            <h2>6. Traversing the DOM</h2>
+            <p>The middle item below is selected using <code>querySelector()</code>.</p>
+            <ul id="traversalList" class="item-list">
+                <li>Previous sibling</li>
+                <li class="current">Current item</li>
+                <li>Next sibling</li>
+            </ul>
+            <button id="traverseBtn" type="button">Show parent, children, and siblings</button>
+            <p id="traversalResult" class="result" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f7fb;
+    color: #1f2937;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 32px 16px;
+}
+
+main {
+    background: #fff;
+    border: 1px solid #dbe3ef;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 24px;
+}
+
+h1 {
+    color: #172554;
+    margin-bottom: 4px;
+}
+
+.intro,
+.task-summary {
+    color: #475569;
+}
+
+.add-task {
+    display: flex;
+    gap: 8px;
+}
+
+input {
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    flex: 1;
+    font: inherit;
+    min-width: 0;
+    padding: 9px 12px;
+}
+
+button {
+    background: #2563eb;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    padding: 9px 12px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+#statusMessage {
+    color: #166534;
+    min-height: 1.5em;
+}
+
+#statusMessage.error {
+    color: #b42318;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#taskList li {
+    align-items: center;
+    border-bottom: 1px solid #dbe3ef;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 12px 4px;
+}
+
+#taskList li span {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.done {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.delete-btn {
+    background: #b42318;
+}
+
+.delete-btn:hover {
+    background: #912018;
+}
+
+.empty-message {
+    color: #64748b;
+    justify-content: center;
+}
+
+.visually-hidden {
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 18px;
+    }
+
+    .add-task {
+        flex-direction: column;
+    }
+}

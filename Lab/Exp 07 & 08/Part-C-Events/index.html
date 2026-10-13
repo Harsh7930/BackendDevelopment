@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part C - Event Handling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <p><a href="../index.html">&larr; Back to Experiment 07 &amp; 08</a></p>
+        <h1>Part C: Event Handling</h1>
+        <p>Try each example below to see JavaScript events in action.</p>
+
+        <section>
+            <h2>Click and mouse events</h2>
+            <button id="clickButton" type="button">Click me</button>
+            <div id="hoverBox" tabindex="0">Move the mouse over this box</div>
+            <p id="mouseMessage" class="message" aria-live="polite">No mouse event yet.</p>
+        </section>
+
+        <section>
+            <h2>Keyboard and input events</h2>
+            <label for="keyInput">Type something:</label>
+            <input id="keyInput" type="text" placeholder="Press any key">
+            <p id="keyMessage" class="message" aria-live="polite">No key pressed yet.</p>
+        </section>
+
+        <section>
+            <h2>Form event and preventDefault()</h2>
+            <form id="nameForm">
+                <label for="nameInput">Your name:</label>
+                <input id="nameInput" type="text" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="formMessage" class="message" aria-live="polite"></p>
+            <a id="demoLink" href="https://example.com">Example link (navigation is prevented)</a>
+        </section>
+
+        <section>
+            <h2>Event bubbling and stopPropagation()</h2>
+            <label class="check-label">
+                <input id="stopBubble" type="checkbox">
+                Stop bubbling when the inner button is clicked
+            </label>
+            <div id="outerBox" class="outer-box">
+                Outer box
+                <button id="innerButton" type="button">Inner button</button>
+            </div>
+            <p id="bubbleMessage" class="message" aria-live="polite">Click the inner button or outer box.</p>
+        </section>
+
+        <section>
+            <h2>Event delegation</h2>
+            <p>Click any item to select it. New items also work because the listener is on the list.</p>
+            <ul id="fruitList">
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Mango</li>
+            </ul>
+            <button id="addFruitButton" type="button">Add Orange</button>
+            <p id="listMessage" class="message" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

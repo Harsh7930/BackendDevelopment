@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experiment 07 and 08: beginner examples of ES6, DOM manipulation, and JavaScript events.">
+    <title>Experiment 07 &amp; 08 | JavaScript Lab</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 18px;
+            background: #f3f6fb;
+            color: #243247;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        main {
+            width: min(100%, 850px);
+            margin: 0 auto;
+        }
+
+        .back-link,
+        .eyebrow {
+            color: #315b9a;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .back-link {
+            margin: 0 0 30px;
+        }
+
+        .back-link a,
+        .lab-card a {
+            color: #174ea6;
+        }
+
+        h1,
+        h2 {
+            color: #172b4d;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 5vw, 2.7rem);
+            line-height: 1.2;
+        }
+
+        .intro {
+            max-width: 620px;
+            color: #53657d;
+        }
+
+        .lab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .lab-card {
+            min-height: 150px;
+            padding: 20px;
+            border: 1px solid #d9e2ef;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 3px 10px rgba(23, 43, 77, 0.06);
+        }
+
+        .lab-card h2 {
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+        }
+
+        .lab-card p {
+            margin: 0 0 14px;
+            color: #53657d;
+        }
+
+        .open-link {
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .help-note {
+            padding: 14px 18px;
+            border-left: 4px solid #315b9a;
+            border-radius: 4px;
+            background: #eaf1fb;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #f0a202;
+            outline-offset: 3px;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="back-link"><a href="../">&larr; Back to Lab folder</a></p>
+
+        <header>
+            <p class="eyebrow">JAVASCRIPT LAB</p>
+            <h1>Experiment 07 &amp; 08</h1>
+            <p class="intro">
+                Learn ES6, change a web page with the DOM, respond to browser events,
+                and practise with a simple to-do list.
+            </p>
+        </header>
+
+        <nav aria-label="Experiment parts">
+            <ol class="lab-list">
+                <li class="lab-card">
+                    <h2>Part A: ES6 Features</h2>
+                    <p>Practise modern JavaScript syntax, classes, modules, and promises.</p>
+                    <a class="open-link" href="Part-A-ES6/index.html">Open ES6 examples &rarr;</a>
+                </li>
+                <li class="lab-card">
+                    <h2>Part B: DOM Manipulation</h2>
+                    <p>Select elements and try changing content, attributes, and styles.</p>
+                    <a class="open-link" href="Part-B-DOM/index.html">Open DOM examples &rarr;</a>
+                </li>
+                <li class="lab-card">
+                    <h2>Part C: Event Handling</h2>
+                    <p>Try clicks, keyboard input, forms, bubbling, and event delegation.</p>
+                    <a class="open-link" href="Part-C-Events/index.html">Open event examples &rarr;</a>
+                </li>
+                <li class="lab-card">
+                    <h2>Practical Exercise: To-Do List</h2>
+                    <p>Add tasks, mark them done, undo them, and delete them.</p>
+                    <a class="open-link" href="To-Do-List/index.html">Open the to-do list &rarr;</a>
+                </li>
+            </ol>
+        </nav>
+
+        <p class="help-note">
+            <strong>Tip:</strong> Start a local server in this folder before opening
+            Part A. The <a href="README.md">README</a> has the setup steps and experiment guide.
+        </p>
+
+        <footer>
+            <p>Work through each part, try the examples, and read the JavaScript source to see how it works.</p>
+        </footer>
+    </main>
+</body>
+</html>

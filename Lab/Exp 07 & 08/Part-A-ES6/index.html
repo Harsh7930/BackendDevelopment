@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part A - ES6 Features</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 16px;
+            background: #f4f7fb;
+            color: #202938;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            max-width: 860px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            color: #1a4b84;
+        }
+
+        .back-link {
+            margin-top: 0;
+        }
+
+        .intro {
+            margin-top: 0;
+            color: #536171;
+        }
+
+        #output {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .result-card {
+            padding: 16px;
+            border: 1px solid #d9e2ef;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(22, 49, 83, 0.08);
+        }
+
+        .result-card h2 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            color: #1a4b84;
+        }
+
+        .result-card p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .note {
+            margin-top: 24px;
+            padding: 12px 16px;
+            border-left: 4px solid #1a4b84;
+            background: #e8f1fc;
+        }
+
+        code {
+            color: #7a2f00;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="back-link"><a href="../index.html">&larr; Back to Experiment 07 &amp; 08</a></p>
+        <h1>Experiment 07 &amp; 08: Part A - ES6 Features</h1>
+        <p class="intro">Simple examples of modern JavaScript. Open the browser console to see the same results.</p>
+
+        <section id="output" aria-live="polite">
+            <p>Loading ES6 examples...</p>
+        </section>
+
+        <p class="note">
+            This page uses an ES6 module. Start a local server in the experiment folder
+            (for example, <code>python -m http.server 8000</code>) and open this page
+            through the server.
+        </p>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
