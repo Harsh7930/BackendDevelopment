@@ -35,35 +35,57 @@ Exp 07 & 08/
 ├── index.html
 ├── README.md
 ├── Part-A-ES6/
+│   ├── index.html
+│   ├── app.js
+│   ├── math.js
+│   └── README.md
 ├── Part-B-DOM/
+│   ├── index.html
+│   ├── app.js
+│   ├── styles.css
+│   └── README.md
 ├── Part-C-Events/
+│   ├── index.html
+│   ├── app.js
+│   ├── styles.css
+│   └── README.md
 ├── To-Do-List/
-└── assets/
+│   ├── index.html
+│   ├── app.js
+│   ├── styles.css
+│   └── README.md
+└── [main landing page]
 ```
 
 ## How to Run the Experiment
 
 1. Open the `Exp 07 & 08` folder in VS Code.
-2. Open the terminal in that folder.
-3. Start a local server using:
+2. Open the terminal inside this folder.
+3. Run the following command:
 
 ```powershell
 py -m http.server 8000
 ```
 
-If `py` does not work, use:
+If `py` is not recognized, use:
 
 ```powershell
 python -m http.server 8000
 ```
 
-4. Open the browser and visit:
+4. Open your browser and go to:
 
 ```text
 http://localhost:8000/
 ```
 
-5. Click on the required part of the experiment to open each activity.
+5. Click the section you want to open from the main landing page.
+
+## Quick Start
+
+- Open `index.html` to view the main experiment home page.
+- Use the part links to explore ES6, DOM, event handling, and the to-do list.
+- Read the code in each part and try modifying values to understand the behavior.
 
 ## Parts of the Experiment
 

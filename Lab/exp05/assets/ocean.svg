@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="Turquoise ocean and golden sun">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#b9e4ed"/><stop offset="1" stop-color="#f7d6af"/></linearGradient>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#66c5c4"/><stop offset="1" stop-color="#287f96"/></linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h900v340H0z"/>
+  <circle cx="680" cy="105" r="47" fill="#ffd17d"/>
+  <path fill="#fff5db" opacity=".65" d="M0 206h900v134H0z"/>
+  <path fill="url(#sea)" d="M0 193q115 22 225 0t220 0 220 0 235 0v147H0z"/>
+  <path fill="#a1ded6" d="M0 228q90-20 180 0t180 0 180 0 180 0 180 0v17q-90-17-180 0t-180 0-180 0-180 0-180 0z"/>
+  <path fill="#d4f0e5" opacity=".8" d="M98 279q85-14 170 0t170 0 170 0v8q-85-12-170 0t-170 0-170 0z"/>
+  <path fill="#286b78" d="M0 315q145-22 290 0t290 0 320 0v25H0z"/>
+  <path fill="#f5c06d" opacity=".8" d="M609 169h142v4H609zm-29 11h200v3H580z"/>
+</svg>

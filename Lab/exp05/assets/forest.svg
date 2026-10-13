@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="Green forest beneath a bright sky">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c7e9e3"/><stop offset="1" stop-color="#f5edcf"/></linearGradient>
+    <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#9dbc78"/><stop offset="1" stop-color="#5d805c"/></linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h900v340H0z"/>
+  <circle cx="704" cy="91" r="36" fill="#ffe49a"/>
+  <path fill="#97b88b" d="M0 209 155 28l156 181 148-160 158 160 129-143 154 143v131H0z"/>
+  <path fill="#567c69" d="M0 247 105 82l106 165 106-135 110 135 124-166 119 166 110-124 120 124v93H0z"/>
+  <path fill="url(#ground)" d="M0 251q165-27 315 5t290 0q153-34 295-1v85H0z"/>
+  <path fill="#e5d4a5" d="M355 340q53-49 72-89t55-31q35 5 33 44t59 76z"/>
+  <path fill="#3f6954" d="m48 280 59-125 59 125zm650-7 71-147 72 147zm-534-9 49-103 48 103zm421 7 54-115 55 115z"/>
+  <path fill="#6b8e5c" d="m69 281 38-80 38 80zm604-8 46-94 47 94z"/>
+</svg>

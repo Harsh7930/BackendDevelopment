@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="Sunrise over mountain peaks">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#f5c9a9"/><stop offset="1" stop-color="#f4e7d7"/></linearGradient>
+    <linearGradient id="mountain" x2="0" y2="1"><stop stop-color="#756caa"/><stop offset="1" stop-color="#45486e"/></linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h900v340H0z"/>
+  <circle cx="660" cy="106" r="46" fill="#ffe5a7"/>
+  <path fill="#beb2c4" d="m0 272 190-160 151 160 121-119 213 187H0z"/>
+  <path fill="url(#mountain)" d="m165 340 265-241 282 241z"/>
+  <path fill="#f8f0e8" d="m430 99 55 78-57-25-47 30z"/>
+  <path fill="#66658e" d="m386 141 42 11-51 51z"/>
+  <path fill="#535879" d="m0 300 180-114 150 154H0zm580 40 122-173 198 173z"/>
+  <path fill="#76816f" d="M0 316q160-48 330 8t300-4q155-49 270-8v28H0z"/>
+</svg>

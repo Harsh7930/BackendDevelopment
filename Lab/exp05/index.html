@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 05 | jQuery Learning Path</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="hero">
+            <p class="eyebrow">Experiment 05</p>
+            <h1>jQuery Learning Path</h1>
+            <p class="subtitle">Master jQuery concepts incrementally with this interactive question bank.</p>
+        </header>
+
+        <section class="panel">
+            <h2>Basic HTML, CSS, and JavaScript Structure</h2>
+            <p>Before diving into jQuery, it is important to understand the basic structure of a web page:</p>
+            <pre class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="content"&gt;Hello World!&lt;/div&gt;
+
+    &lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(document).ready(function() {
+            $("#content").css("color", "blue");
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>jQuery simplifies JavaScript operations, making it easier to select elements, handle events, and create animations.</p>
+        </section>
+
+        <section class="panel">
+            <h2>jQuery Concepts</h2>
+            <div class="concepts">
+                <span>Selectors</span>
+                <span>DOM Manipulation</span>
+                <span>Event Handling</span>
+                <span>Effects &amp; Animations</span>
+                <span>AJAX</span>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Practice Questions</h2>
+            <div class="questions" id="questionList">
+                <article class="question-card">
+                    <h3>1. Select all paragraphs and change their text color to blue</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$("p").css("color", "blue");</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>2. Select an element with id "main" and hide it</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$("#main").hide();</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>3. Change the HTML content of a div with class "container"</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$(".container").html("New content");</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>4. Add a click event to a button that shows an alert</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$("button").click(function() {
+    alert("Button clicked!");
+});</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>5. Create a fade-in effect for a hidden div</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$("div").fadeIn();</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>6. Add a class to an element on button click</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$("button").click(function() {
+    $("#element").addClass("active");
+});</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>7. Make an AJAX request to get data from a JSON API</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$.ajax({
+    url: "https://jsonplaceholder.typicode.com/posts/1",
+    method: "GET",
+    success: function(data) {
+        console.log(data);
+    }
+});</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>8. Create a slide toggle effect for a menu</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$("#menu").slideToggle();</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>9. Validate a form before submission</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">$("form").submit(function(event) {
+    if ($("#name").val() === "") {
+        event.preventDefault();
+        alert("Name is required");
+    }
+});</pre>
+                </article>
+
+                <article class="question-card">
+                    <h3>10. Create a simple image slider</h3>
+                    <button class="toggle-answer" type="button">Show Answer</button>
+                    <pre class="answer">let index = 0;
+const images = ["img1.jpg", "img2.jpg", "img3.jpg"];
+
+setInterval(function() {
+    $("#slider").attr("src", images[index]);
+    index = (index + 1) % images.length;
+}, 2000);</pre>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.12.1.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
