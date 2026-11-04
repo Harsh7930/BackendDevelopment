@@ -13,6 +13,9 @@ This repository contains my Backend Development class theory work and laboratory
   - [Lecture 5: RESTful APIs and FastAPI](Theory/L05-RESTful-APIs-FastAPI/)
   - [Lecture 6: Session Control](Theory/L06-Session-Control/)
   - [Lecture 7: Web Storage](Theory/L07-Web-Storage/)
+  - [Lecture 26: Django Framework](Theory/L26-Django-Framework/)
+  - [Lecture 28: Integrating Third-Party APIs and Services](Theory/L28-Integrating-Third-Party-APIs-and-Services/)
+  - [Lecture 29: Testing and Debugging Django Applications](Theory/L29-Testing-and-Debugging-Django-Applications/)
   - [Assignment 01: Notes App](Theory/Assignment-1-Notes-App/)
 - [Lab](Lab/) — laboratory experiments and backend projects.
   - [Experiment 05: jQuery Learning Path](Lab/exp05/)

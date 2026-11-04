@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 28 | API Explorer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; color: #14213d; background: linear-gradient(135deg, #edf6ff, #f7f1ff); }
+    main { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 72px 0; }
+    .tag { display: inline-block; padding: 8px 12px; border-radius: 999px; color: #1d4ed8; background: #dbeafe; font-size: .85rem; font-weight: 700; }
+    h1 { max-width: 700px; margin: 18px 0 12px; font-size: clamp(2.2rem, 6vw, 4.5rem); letter-spacing: -2px; }
+    .intro { max-width: 650px; color: #475569; font-size: 1.15rem; line-height: 1.6; }
+    .panel { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; margin-top: 42px; padding: 32px; border: 1px solid #dbe4f0; border-radius: 24px; background: rgba(255,255,255,.86); box-shadow: 0 20px 50px rgba(55,65,81,.12); }
+    h2 { margin: 0 0 9px; font-size: 1.55rem; }
+    code { display: inline-block; margin-top: 8px; padding: 8px 10px; border-radius: 7px; color: #334155; background: #eef2f7; }
+    a { display: inline-block; padding: 14px 20px; border-radius: 10px; color: white; background: #2563eb; text-decoration: none; font-weight: 700; box-shadow: 0 8px 16px rgba(37,99,235,.25); }
+    a:hover { background: #1d4ed8; }
+    .notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+    .note { padding: 18px; border-radius: 14px; background: white; border: 1px solid #e2e8f0; }
+    .note b { display: block; margin-bottom: 6px; }
+    .note span { color: #64748b; font-size: .92rem; line-height: 1.4; }
+    @media (max-width: 650px) { .panel { grid-template-columns: 1fr; } .notes { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="tag">LECTURE 28 • DJANGO</span>
+    <h1>Third-Party API Explorer</h1>
+    <p class="intro">This website fetches a post from an external service through Django and displays it in a browser-friendly format.</p>
+    <section class="panel">
+      <div>
+        <h2>View external post #1</h2>
+        <p>The Django service layer fetches data from JSONPlaceholder with a safe two-second timeout.</p>
+        <code>/api/students/external/1/view/</code>
+      </div>
+      <a href="/api/students/external/1/view/">Show Post</a>
+    </section>
+    <section class="notes">
+      <div class="note"><b>Service layer</b><span>External HTTP code stays out of views.</span></div>
+      <div class="note"><b>Timeout</b><span>Requests wait for a maximum of two seconds.</span></div>
+      <div class="note"><b>Safe failures</b><span>Unavailable services return a controlled response.</span></div>
+    </section>
+  </main>
+</body>
+</html>
