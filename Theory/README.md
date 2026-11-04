@@ -4,6 +4,7 @@ This directory contains the Backend Development lecture notes, examples, and ass
 
 ## Modules
 
+- [Docker Commands & Flags - Hands-On Lab](docker%20commands/)
 - [Lecture 1: Node.js Basics](L01-Node.js-Basics/)
 - [Lecture 4: HTTP Requests and Responses](L04-HTTP-Requests-and-Responses/)
 - [Lecture 5: RESTful APIs and FastAPI](L05-RESTful-APIs-FastAPI/)
